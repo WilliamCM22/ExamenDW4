@@ -1,4 +1,4 @@
-﻿@*@model Appartement
+﻿@model Appartement
 
 <div class="row">
     <div class="col-4">
@@ -7,28 +7,34 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
             <div>
-                <label asp-for="Titre" class="form-label"></label>
-                <input asp-for="Titre" class="form-control" />
-                <span asp-validation-for="Titre" class="text-danger"></span>
-            </div>
-
-            <div class="form-check">
-                <input asp-for="EnLigne" class="form-check-input" />
-                <label asp-for="EnLigne" class="form-check-label"></label>
-                <span asp-validation-for="EnLigne" class="text-danger"></span>
+                <label asp-for="Numero" class="form-label"></label>
+                <input asp-for="Numero" class="form-control" />
+                <span asp-validation-for="Numero" class="text-danger"></span>
             </div>
 
             <div>
-                <label asp-for="Campus" class="form-label"></label>
-                <select asp-for="Campus" class="form-select">
+                <label asp-for="Surface" class="form-label"></label>
+                <input asp-for="Surface" class="form-control" />
+                <span asp-validation-for="Surface" class="text-danger"></span>
+            </div>
 
-                    @foreach (var campus in Enum.GetValues<Campus>())
+            <div class="form-check">
+                <input asp-for="Meuble" class="form-check-input" />
+                <label asp-for="Meuble" class="form-check-label"></label>
+                <span asp-validation-for="Meuble" class="text-danger"></span>
+            </div>
+
+            <div>
+                <label asp-for="TypeAppartement" class="form-label"></label>
+                <select asp-for="TypeAppartement" class="form-select">
+
+                    @foreach (var type in Enum.GetValues<TypeAppartement>())
                     {
-                        <option value="@campus">@Enum.GetName(campus)</option>
+                            <option value="@type">@Enum.GetName(type)</option>                            
                     }
 
                 </select>
-                <span asp-validation-for="Campus" class="text-danger"></span>
+                <span asp-validation-for="TypeAppartement" class="text-danger"></span>
             </div>
 
             <div class="form-group">
@@ -37,4 +43,4 @@
             </div>
         </form>
     </div>
-</div>*@
+</div>

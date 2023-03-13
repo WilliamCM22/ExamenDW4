@@ -1,5 +1,6 @@
 ﻿using ExamenDW4.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace ExamenDW4.Data
 {
@@ -91,6 +92,13 @@ namespace ExamenDW4.Data
                 DateDebut = new DateTime(2021, 11, 01),
                 DateFin = new DateTime(2022, 10, 30)
             };
+
+            await bails.Appartements.AddRangeAsync(new Appartement[] { app20, app30, app40, app50});
+            await bails.Locataires.AddRangeAsync(new Locataire[] { alexandre, mariesoleil, deborah });
+            await bails.Locations.AddRangeAsync(new Location[] { location1, location2, location3});
+           
+
+            await bails.SaveChangesAsync();
         }
     }
 }
