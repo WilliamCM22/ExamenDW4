@@ -11,6 +11,7 @@ namespace ExamenDW4.Models
     public class Appartement
     {
         public int ID { get; set; }
+        [Display(Name = "Numéro")]
         public required int Numero { get; set; }
         public required int Surface { get; set; }
         [Display(Name = "Meublé")]
