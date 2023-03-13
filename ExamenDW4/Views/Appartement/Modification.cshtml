@@ -1,0 +1,40 @@
+﻿@*@model Appartement
+
+<div class="row">
+    <div class="col-4">
+
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div>
+                <label asp-for="Titre" class="form-label"></label>
+                <input asp-for="Titre" class="form-control" />
+                <span asp-validation-for="Titre" class="text-danger"></span>
+            </div>
+
+            <div class="form-check">
+                <input asp-for="EnLigne" class="form-check-input" />
+                <label asp-for="EnLigne" class="form-check-label"></label>
+                <span asp-validation-for="EnLigne" class="text-danger"></span>
+            </div>
+
+            <div>
+                <label asp-for="Campus" class="form-label"></label>
+                <select asp-for="Campus" class="form-select">
+
+                    @foreach (var campus in Enum.GetValues<Campus>())
+                    {
+                        <option value="@campus">@Enum.GetName(campus)</option>
+                    }
+
+                </select>
+                <span asp-validation-for="Campus" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+                <a asp-action="Index">Annuler</a>
+            </div>
+        </form>
+    </div>
+</div>*@

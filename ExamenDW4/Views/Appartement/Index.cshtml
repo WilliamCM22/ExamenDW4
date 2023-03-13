@@ -1,0 +1,26 @@
+﻿@model List<Appartement>
+
+<table class="table">
+    <thread>
+        <tr>
+            <th>@Html.DisplayNameFor(v => v[0].Numero)</th>
+            <th>@Html.DisplayNameFor(v => v[0].Surface)</th>
+            <th>@Html.DisplayNameFor(v => v[0].Meuble)</th>
+            <th>@Html.DisplayNameFor(v => v[0].TypeAppartement)</th>
+            <th></th>
+        </tr>
+    </thread>
+
+    @foreach (var appartement in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(v => appartement.Numero)</td>
+            <td>@Html.DisplayFor(v => appartement.Surface)</td>
+            <td>@Html.DisplayFor(v => appartement.Meuble)</td>
+            <td>@Html.DisplayFor(v => appartement.TypeAppartement)</td>
+            <td>
+                <a asp-controller="appartement" asp-action="Modification" asp-route-id="@appartement.ID">Modifier</a>
+            </td>
+        </tr>
+    }
+</table>
